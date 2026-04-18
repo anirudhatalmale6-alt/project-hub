@@ -66,6 +66,7 @@ function getProjects() {
       status: 'Live',
       category: ['business', 'ai'],
       url: 'https://skylarkmedia.se/tapin/',
+      github: 'https://github.com/anirudhatalmale6-alt/nfc-tapin-attendance',
       description: 'Complete NFC attendance system with employee management, citizen profiles, journals/diary, planning/scheduling, contracts, data processing log, IP lock, custom themes, AI insights, HR module, guard routines, room management.',
       tech: ['Node.js', 'Express', 'EJS', 'SQLite', 'NFC', 'AI'],
       credentials: [
@@ -85,6 +86,7 @@ function getProjects() {
       status: 'Live',
       category: ['business'],
       url: 'https://skylarkmedia.se/nordjournal/',
+      github: 'https://github.com/anirudhatalmale6-alt/nordjournal-marketplace',
       description: 'Danish social services marketplace connecting case workers with care providers. Search across categories, target groups, regions. Provider profiles with verification.',
       tech: ['Node.js', 'Express', 'SQLite', 'SPA'],
       credentials: [
@@ -105,6 +107,7 @@ function getProjects() {
       status: 'Live',
       category: ['business'],
       url: 'https://skylarkmedia.se/nordjournal/demo/',
+      github: 'https://github.com/anirudhatalmale6-alt/nordjournal-demo',
       description: 'Interactive demo of the NordJournal care management system for presentations and sales.',
       tech: ['Node.js', 'Express', 'EJS'],
       credentials: [
@@ -123,6 +126,7 @@ function getProjects() {
       status: 'Live',
       category: ['business'],
       url: 'https://skylarkmedia.se/nordjournal/admin/',
+      github: 'https://github.com/anirudhatalmale6-alt/nordjournal-admin',
       description: 'Administration panel for NordJournal system management and configuration.',
       tech: ['Node.js', 'Express'],
       credentials: [
@@ -180,6 +184,7 @@ function getProjects() {
       status: 'Live',
       category: ['ai', 'media'],
       url: 'https://skylarkmedia.se/fai/',
+      github: 'https://github.com/anirudhatalmale6-alt/festival-ai',
       description: 'AI-powered festival planning and management platform with intelligent scheduling and resource allocation.',
       tech: ['Node.js', 'Express', 'SQLite', 'AI'],
       credentials: [
@@ -198,6 +203,7 @@ function getProjects() {
       status: 'Beta',
       category: ['ai', 'business'],
       url: 'https://skylarkmedia.se/val/',
+      github: 'https://github.com/anirudhatalmale6-alt/election-intelligence',
       description: 'Election analytics platform with voter analysis, field operations coordination, demographic tracking, AI briefings. Swedish election data visualization.',
       tech: ['Node.js', 'Express', 'SQLite', 'AI'],
       credentials: [
@@ -216,6 +222,7 @@ function getProjects() {
       status: 'Live',
       category: ['media'],
       url: 'https://skylarkmedia.se/playout/',
+      github: 'https://github.com/anirudhatalmale6-alt/playout-ai',
       description: 'Web-based 24/7 video playout and multi-RTMP streaming panel. Media upload/transcode, playlists, multi-destination RTMP, live control, scheduler, overlays.',
       tech: ['Node.js', 'Express', 'Socket.IO', 'FFmpeg'],
       credentials: [
@@ -234,6 +241,7 @@ function getProjects() {
       status: 'Live',
       category: ['media'],
       url: 'https://skylarkmedia.se/studio/',
+      github: 'https://github.com/anirudhatalmale6-alt/kasamira-livestudio',
       description: 'Browser-based live production platform (StreamYard-like) with WebRTC, canvas compositing, multi-stream RTMP, guest invites, lower thirds, recording.',
       tech: ['Node.js', 'Express', 'WebRTC', 'Socket.IO', 'Canvas API'],
       credentials: [
@@ -271,6 +279,7 @@ function getProjects() {
       status: 'Live',
       category: ['business'],
       url: 'https://skylarkmedia.se/mitsign/',
+      github: 'https://github.com/anirudhatalmale6-alt/mitsign',
       description: 'Digital document signing platform for secure electronic signatures.',
       tech: ['Node.js', 'Express', 'PDF'],
       credentials: [
@@ -289,6 +298,7 @@ function getProjects() {
       status: 'Live',
       category: ['business'],
       url: 'https://skylarkmedia.se/vikarly/',
+      github: 'https://github.com/anirudhatalmale6-alt/vikarly',
       description: 'Temp agency staffing management platform for shift scheduling and worker management.',
       tech: ['Node.js', 'Express', 'SQLite'],
       credentials: [
@@ -307,6 +317,7 @@ function getProjects() {
       status: 'Live',
       category: ['business'],
       url: 'https://skylarkmedia.se/journal/',
+      github: 'https://github.com/anirudhatalmale6-alt/momentum-journal',
       description: 'Digital journal and diary system for care facilities with structured entries and reporting.',
       tech: ['Node.js', 'Express'],
       credentials: [
@@ -362,6 +373,7 @@ function getProjects() {
       status: 'Live',
       category: ['ai', 'business'],
       url: 'https://bkorkortsteori.se',
+      github: 'https://github.com/anirudhatalmale6-alt/bkorkortsteori',
       description: 'Swedish driving theory quiz app with 8 languages, AI tutor, Stripe payments, 5 license categories (Car, MC, Truck, Bus, Taxi).',
       tech: ['PHP 8.4', 'MySQL 8.4', 'jQuery', 'Stripe', 'Gemini AI'],
       credentials: [
@@ -384,6 +396,7 @@ function getProjects() {
       status: 'Live',
       category: ['business'],
       url: 'https://skylarkmedia.se/krrc/',
+      github: 'https://github.com/anirudhatalmale6-alt/krrc',
       description: 'Educational platform.',
       tech: ['Node.js', 'Express'],
       credentials: [
@@ -484,6 +497,7 @@ function dashboardPage() {
       <div class="section-label">Server Paths</div>
       <div class="paths">${pathRows}</div>
       ${p.docs ? `<div class="section-label">Documentation</div><div class="docs-text">${p.docs}</div>` : ''}
+      ${p.github ? `<div class="section-label"><i class="fab fa-github"></i> Source Code</div><div class="github-section"><a href="${p.github}" target="_blank" class="github-link"><i class="fab fa-github"></i> ${p.github}</a><a href="${p.github}/archive/refs/heads/main.zip" class="download-btn" title="Download ZIP"><i class="fas fa-download"></i> Download ZIP</a></div>` : ''}
       <div class="card-buttons">${buttons.join('')}</div>
     </div>`;
   }).join('');
@@ -546,6 +560,11 @@ body{font-family:'Inter',sans-serif;background:#0a1628;color:#e0e0e0;min-height:
 .path-label{color:rgba(255,255,255,0.3);font-weight:600;text-transform:capitalize}
 .path-item code{font-family:'Courier New',monospace;color:rgba(255,255,255,0.7);font-size:11px}
 .docs-text{padding:0 20px 4px;font-size:12px;color:rgba(255,255,255,0.45);line-height:1.6}
+.github-section{padding:4px 20px 8px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.github-link{color:#00d4ff;font-size:12px;text-decoration:none;display:flex;align-items:center;gap:6px;word-break:break-all}
+.github-link:hover{text-decoration:underline}
+.download-btn{background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3);padding:5px 14px;border-radius:6px;font-size:11px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:5px;transition:all 0.2s;white-space:nowrap}
+.download-btn:hover{background:rgba(16,185,129,0.25)}
 .card-buttons{padding:12px 20px 16px;display:flex;flex-direction:column;gap:6px}
 .url-info{font-size:12px;color:rgba(255,255,255,0.5);display:flex;align-items:center;gap:8px}
 .url-info i{color:rgba(255,255,255,0.3);width:14px;text-align:center}
