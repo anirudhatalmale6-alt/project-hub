@@ -130,7 +130,7 @@ function getProjects() {
       description: 'Administration panel for NordJournal system management and configuration.',
       tech: ['Node.js', 'Express'],
       credentials: [
-        { label: 'Admin Login', user: 'admin', pass: 'Admin2024!' }
+        { label: 'Admin Login', user: 'admin', pass: 'NordAdmin2026!' }
       ],
       paths: {
         server: '/var/www/nordjournal-admin/',
@@ -283,7 +283,7 @@ function getProjects() {
       description: 'Digital document signing platform for secure electronic signatures.',
       tech: ['Node.js', 'Express', 'PDF'],
       credentials: [
-        { label: 'Admin', user: 'admin', pass: 'Admin2024!' }
+        { label: 'Admin', user: 'admin@mitsign.dk', pass: 'Admin2024!' }
       ],
       paths: {
         server: '/var/www/skylarkmedia/mitsign/',
@@ -400,13 +400,56 @@ function getProjects() {
       description: 'Educational platform.',
       tech: ['Node.js', 'Express'],
       credentials: [
-        { label: 'Admin', user: 'admin', pass: 'Admin2024!' }
+        { label: 'Admin', user: 'admin@krrc.local', pass: 'Admin2024!' }
       ],
       paths: {
         server: '/var/www/krrc/',
         pm2: 'krrc (port 3006)'
       },
       docs: 'Educational content management and delivery platform.'
+    },
+    {
+      name: 'JKTV Live',
+      icon: 'fa-broadcast-tower',
+      color: '#ef4444',
+      status: 'Live',
+      category: ['media'],
+      url: 'https://jktv.live',
+      description: 'Live streaming platform with Ant Media Server. RTMP/WebRTC live broadcasting, VOD, stream switching, viewer count tracking, 24/7 playout.',
+      tech: ['PHP 8.3', 'Ant Media Server', 'RTMP', 'WebRTC', 'FFmpeg'],
+      credentials: [
+        { label: 'Admin (live.html/stream_info)', user: 'admin', pass: '(nginx htpasswd)' },
+        { label: 'Ant Media Dashboard', user: 'admin', pass: '(set via Ant Media UI at :5080)' }
+      ],
+      paths: {
+        server: '/var/www/html/ (PHP frontend)',
+        antMedia: '/usr/local/antmedia/ (Ant Media Server, port 5080/5443)',
+        apps: 'LiveApp, WebRTCApp, live (Ant Media webapps)',
+        nginx: 'jktv.live SSL in nginx.conf lines 90-180',
+        rtmp: 'RTMP ingest on port 1937'
+      },
+      docs: 'Live streaming: RTMP ingest -> Ant Media Server -> WebRTC/HLS playback. Stream switcher at /switcher/. VOD archive at /vod.php. Viewer count tracking via PHP/MySQL. Admin panel at /live.html (htpasswd protected). Ant Media dashboard at port 5080. SSL via Let'"'"'s Encrypt.'
+    },
+    {
+      name: 'MH WordPress',
+      icon: 'fa-blog',
+      color: '#21759b',
+      status: 'Live',
+      category: ['business'],
+      url: 'https://skylarkmedia.se/mh/',
+      description: 'WordPress site with 3D poster viewer and B168 content. Hosted at /mh/ path on skylarkmedia.se.',
+      tech: ['WordPress', 'PHP', 'MySQL'],
+      credentials: [
+        { label: 'WP Admin', user: '(check wp-admin)', pass: '(WP login)' },
+        { label: 'MySQL', user: 'mh_wp', pass: 'MhWp2024!' }
+      ],
+      paths: {
+        server: '/var/www/html/mh/',
+        database: 'MySQL: mh_wordpress (user: mh_wp)',
+        nginx: 'location /mh/ in nginx.conf (alias to /var/www/html/mh/)',
+        content: '/var/www/html/mh/3d/ (3D viewer), /var/www/html/mh/B168/'
+      },
+      docs: 'WordPress installation at /mh/ path. Contains 3D poster viewer and B168 content section. PHP-FPM 8.3. MySQL database mh_wordpress.'
     }
   ];
 }
